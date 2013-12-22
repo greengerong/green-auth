@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module("green.auth.demo", ["green.auth"]).controller("demoController", ["$http", "authService", "$rootScope", "$timeout", function($http, authService, $rootScope, $timeout) {
+angular.module("green.auth.demo", ["green.auth"]).controller("demoController", ["$http", "authService", "$timeout", "$scope", function($http, authService, $timeout, $scope) {
   var vm = this;
 
   var setToken = function() {
@@ -29,7 +29,7 @@ angular.module("green.auth.demo", ["green.auth"]).controller("demoController", [
       console.log(data);
     });
 
-    $rootScope.$on("green-auth-event:response-error", function(data, rejection) {
+    $scope.$on("green-auth-event:response-error", function(data, rejection) {
       vm.isSuccess = false;
       vm.msg = rejection.status + " " + rejection.data;
 
@@ -38,7 +38,7 @@ angular.module("green.auth.demo", ["green.auth"]).controller("demoController", [
       }, 3000);
     });
 
-    $rootScope.$on("green-auth-event:response-success", function(data, response) {
+    $scope.$on("green-auth-event:response-success", function(data, response) {
       vm.isSuccess = true;
       console.log(response, "");
       vm.msg = "Get " + response.config.url + " success!(" + angular.toJson(response.data) + ")";
