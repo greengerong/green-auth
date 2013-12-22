@@ -118,7 +118,7 @@ module.exports = function(grunt) {
         uglify: {
             dist: {
                 files: {
-                    '<%= yeoman.dist %>/green.auth.js': ['<%= yeoman.dist %>/green.auth.min.js']
+                    '<%= yeoman.dist %>/green.auth.min.js': ['<%= yeoman.dist %>/green.auth.js']
                 }
             }
         }

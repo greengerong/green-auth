@@ -1,1 +1,3 @@
-This file was created by JetBrains RubyMine 5.4.3.2.1 for binding GitHub repository
+Prerender Java [![Build Status](https://travis-ci.org/greengerong/green-auth.png)](https://travis-ci.org/greengerong/green-auth)
+===========================
+Auth for angular and emit response status to rootscope. 
