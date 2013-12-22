@@ -18,11 +18,11 @@ angular.module('green.auth', []).factory('authInterceptor', [
   function ($rootScope) {
     return {
       'responseError': function (rejection) {
-        $rootScope.$emit('green-auth-event:response-error', rejection);
+        $rootScope.$broadcast('green-auth-event:response-error', rejection);
         return rejection;
       },
       'response': function (response) {
-        $rootScope.$emit('green-auth-event:response-success', response);
+        $rootScope.$broadcast('green-auth-event:response-success', response);
         return response;
       }
     };
