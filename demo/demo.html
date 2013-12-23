@@ -29,7 +29,7 @@
                         </script>
                     <![endif]-->
                 </head>
-                <body ng-controller="demoController as app">
+                <body ng-controller="demoController">
                     <!--[if lt IE 7]>
                         <p class="browsehappy">
                             You are using an
@@ -43,8 +43,8 @@
                         </p>
                     <![endif]-->
                     <div class="container">
-                        <div class="alert" ng-class="{'alert-success':app.isSuccess,'alert-danger':!app.isSuccess}"ng-show="!!app.msg">
-                            {{app.msg}}
+                        <div class="alert" ng-class="{'alert-success':isSuccess,'alert-danger':!isSuccess}"ng-show="!!msg">
+                            {{msg}}
                         </div>
                         <form class="form-horizontal" role="form">
                             <div class="form-group">
@@ -52,16 +52,16 @@
                                     Token
                                 </label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="token" placeholder="token" ng-model="app.token"
+                                    <input type="text" class="form-control" id="token" placeholder="token" ng-model="token"
                                     />
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="col-sm-offset-2 col-sm-10">
-                                    <button type="button" class="btn btn-default" ng-click="app.requestSuccess();">
+                                    <button type="button" class="btn btn-default" ng-click="requestSuccess();">
                                         Request Success
                                     </button>
-                                    <button type="button" class="btn btn-default" ng-click="app.requestError();">
+                                    <button type="button" class="btn btn-default" ng-click="requestError();">
                                         Request Error
                                     </button>
                                 </div>

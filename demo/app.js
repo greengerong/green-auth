@@ -1,18 +1,17 @@
 'use strict';
 
 angular.module("green.auth.demo", ["green.auth"]).controller("demoController", ["$http", "authService", "$timeout", "$scope", function($http, authService, $timeout, $scope) {
-  var vm = this;
 
   var setToken = function() {
-      var token = vm.token ? {
-        "some-token-key": vm.token
+      var token = $scope.token ? {
+        "some-token-key": $scope.token
       } : {
 
       };
       authService.setToken(token);
     };
 
-  vm.requestSuccess = function() {
+  $scope.requestSuccess = function() {
     setToken();
 
     console.log("start request(success):");
@@ -21,7 +20,7 @@ angular.module("green.auth.demo", ["green.auth"]).controller("demoController", [
     });
   };
 
-  vm.requestError = function() {
+  $scope.requestError = function() {
     setToken();
 
     console.log("start request(error):");
@@ -30,24 +29,23 @@ angular.module("green.auth.demo", ["green.auth"]).controller("demoController", [
     });
 
     $scope.$on("green-auth-event:response-error", function(data, rejection) {
-      vm.isSuccess = false;
-      vm.msg = rejection.status + " " + rejection.data;
+      $scope.isSuccess = false;
+      $scope.msg = rejection.status + " " + rejection.data;
 
       $timeout(function() {
-        vm.msg = null;
-      }, 3000);
+        $scope.msg = null;
+      }, 10000);
     });
 
     $scope.$on("green-auth-event:response-success", function(data, response) {
-      vm.isSuccess = true;
-      console.log(response, "");
-      vm.msg = "Get " + response.config.url + " success!(" + angular.toJson(response.data) + ")";
+      console.log(arguments,"success");
+      $scope.isSuccess = true;
+      $scope.msg = "Get " + response.config.url + " success!(" + angular.toJson(response.data) + ")";
 
       $timeout(function() {
-        vm.msg = null;
-      }, 3000);
+        $scope.msg = null;
+      }, 10000);
     });
   };
 
-  return vm;
 }]);
