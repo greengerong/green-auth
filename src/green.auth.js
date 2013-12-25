@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module("green.auth", []).factory("authInterceptor", ["authService", function(authService) {
+angular.module("green.auth", []).factory("authInterceptor", ["$q", "authService", function($q, authService) {
   return {
     "request": function(config) {
       config.headers = config.headers || {};
@@ -8,18 +8,18 @@ angular.module("green.auth", []).factory("authInterceptor", ["authService", func
       angular.forEach(token, function(value, key) {
         config.headers[key] = value;
       });
-      return config;
+      return config || $q.when(config);
     }
   };
-}]).factory("responseInterceptor", ["$rootScope", function($rootScope) {
+}]).factory("responseInterceptor", ["$q", "$rootScope", function($q, $rootScope) {
   return {
     "responseError": function(rejection) {
       $rootScope.$broadcast("green-auth-event:response-error", rejection)
-      return rejection;
+      return $q.reject(rejection);;
     },
     "response": function(response) {
       $rootScope.$broadcast("green-auth-event:response-success", response)
-      return response;
+      return response || $q.when(response);
     }
   }
 }]).service('authService', [function() {

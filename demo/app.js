@@ -17,6 +17,8 @@ angular.module("green.auth.demo", ["green.auth"]).controller("demoController", [
     console.log("start request(success):");
     $http.get("data.json?rn=" + Math.random()).success(function(data) {
       console.log("response with : ", data);
+    }).error(function() {
+      console.log("error:", arguments);
     });
   };
 
@@ -26,6 +28,8 @@ angular.module("green.auth.demo", ["green.auth"]).controller("demoController", [
     console.log("start request(error):");
     $http.get("data-error.json?rn=" + Math.random()).success(function(data) {
       console.log(data);
+    }).error(function() {
+      console.log("error:", arguments);
     });
 
     $scope.$on("green-auth-event:response-error", function(data, rejection) {
@@ -38,7 +42,7 @@ angular.module("green.auth.demo", ["green.auth"]).controller("demoController", [
     });
 
     $scope.$on("green-auth-event:response-success", function(data, response) {
-      console.log(arguments,"success");
+      console.log(arguments, "success");
       $scope.isSuccess = true;
       $scope.msg = "Get " + response.config.url + " success!(" + angular.toJson(response.data) + ")";
 
