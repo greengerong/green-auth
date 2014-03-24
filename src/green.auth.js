@@ -1,3 +1,12 @@
+/******************************************
+ *                                        *
+ * Auth: green gerong                     *
+ * Date: 2014                             *
+ * blog: http://greengerong.github.io/    *
+ * github: https://github.com/greengerong *
+ *                                        *
+ ******************************************/
+ 
 'use strict';
 
 angular.module("green.auth", []).factory("authInterceptor", ["$q", "authService", function($q, authService) {
