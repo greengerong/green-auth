@@ -15,7 +15,9 @@ angular.module("green.auth", []).factory("authInterceptor", ["$q", "authService"
       config.headers = config.headers || {};
       var token = authService.getToken() || {};
       angular.forEach(token, function(value, key) {
-        config.headers[key] = value;
+        if(!config.headers[key]) {
+          config.headers[key] = value;
+        }
       });
       return config || $q.when(config);
     }

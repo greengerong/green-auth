@@ -133,7 +133,7 @@ module.exports = function(grunt) {
     });
 
     grunt.registerTask('test', ['clean', 'connect:test']); //'karma'
-    grunt.registerTask('build', ['clean', 'copy', 'ngmin', 'uglify']);
+    grunt.registerTask('build', ['clean', 'copy', 'uglify']);
 
     grunt.registerTask('default', ['test', 'build']);
 };

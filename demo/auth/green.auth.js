@@ -1,3 +1,12 @@
+/******************************************
+ *                                        *
+ * Auth: green gerong                     *
+ * Date: 2014                             *
+ * blog: http://greengerong.github.io/    *
+ * github: https://github.com/greengerong *
+ *                                        *
+ ******************************************/
+ 
 'use strict';
 
 angular.module("green.auth", []).factory("authInterceptor", ["$q", "authService", function($q, authService) {
@@ -6,7 +15,9 @@ angular.module("green.auth", []).factory("authInterceptor", ["$q", "authService"
       config.headers = config.headers || {};
       var token = authService.getToken() || {};
       angular.forEach(token, function(value, key) {
-        config.headers[key] = value;
+        if(!config.headers[key]) {
+          config.headers[key] = value;
+        }
       });
       return config || $q.when(config);
     }
