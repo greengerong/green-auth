@@ -24,5 +24,9 @@ note: If you want to keep the token when user refresh the page, you put one of s
 		      authServiceProvider.setCacheFactory(tokenCacheFactory.cookie("my-customer-stroage-token-key"));
     		}
   		]);
+
+
+
+If you want to use cookie cache factory, make sure include angular-cookies and module depend on ngCookie module.
         
 
