@@ -23,5 +23,8 @@
   ],
   "dependencies": {
     "angular": ">=1.2.0"
+  },
+  "devDependencies": {
+    "angular-cookies": ">=1.2.0"
   }
 }

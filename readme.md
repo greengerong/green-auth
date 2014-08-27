@@ -1,6 +1,6 @@
 green-auth [![Build Status](https://travis-ci.org/greengerong/green-auth.png)](https://travis-ci.org/greengerong/green-auth)
 ===========================
-Auth for angular and emit response status to rootscope. 
+Auth for angular and broadcast response status from rootscope. 
 
 ***
 Run Test: grunt
