@@ -1,0 +1,28 @@
+{
+  "name": "green-auth",
+  "version": "0.0.0",
+  "homepage": "https://github.com/greengerong/green-auth",
+  "authors": [
+    "greengerong <grzx2210@163.com>"
+  ],
+  "description": "auth for token base server vs angular",
+  "main": "src/green.auth.js",
+  "keywords": [
+    "auth",
+    "token",
+    "angular"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "demo",
+    "test",
+    "tests",
+    "Gruntfile.js",
+  ],
+  "dependencies": {
+    "angular": ">=1.2.0",
+    "angular-cookies": ">=1.2.0"
+  }
+}

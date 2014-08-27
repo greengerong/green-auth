@@ -1,19 +1,20 @@
 'use strict';
 
-angular.module("green.auth.demo", ["green.auth"]).controller("demoController", ["$http", "authService", "$timeout", "$scope", function($http, authService, $timeout, $scope) {
+angular.module("green.auth.demo", ["green.auth"])
+.config(["tokenCacheFactory", "authServiceProvider", function(tokenCacheFactory, authServiceProvider){
+   //TODO: you can define your token cache. default is in js object.
+    //authServiceProvider.setTokenCache(tokenCacheFactory.sessionStorage("my-customer-stroage-token-key"));
+}])
+.controller("demoController", ["$http", "authService", "$timeout", "$scope", function($http, authService, $timeout, $scope) {
 
-  var setToken = function() {
+  $scope.setToken = function() {
       var token = $scope.token ? {
         "some-token-key": $scope.token
-      } : {
-
-      };
+      } : {};
       authService.setToken(token);
     };
 
   $scope.requestSuccess = function() {
-    setToken();
-
     console.log("start request(success):");
     $http.get("data.json?rn=" + Math.random()).success(function(data) {
       console.log("response with : ", data);
@@ -23,8 +24,6 @@ angular.module("green.auth.demo", ["green.auth"]).controller("demoController", [
   };
 
   $scope.requestError = function() {
-    setToken();
-
     console.log("start request(error):");
     $http.get("data-error.json?rn=" + Math.random()).success(function(data) {
       console.log(data);

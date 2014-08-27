@@ -58,6 +58,10 @@
                             </div>
                             <div class="form-group">
                                 <div class="col-sm-offset-2 col-sm-10">
+                                <button type="button" class="btn btn-default" ng-click="setToken();">
+                                        Set Token
+                                    </button>
+
                                     <button type="button" class="btn btn-default" ng-click="requestSuccess();">
                                         Request Success
                                     </button>
@@ -68,9 +72,8 @@
                             </div>
                         </form>
                     </div>
-                    <script src="lib/angular.js">
-                                        
-                    </script>
+                    <script src="lib/angular/angular.js"></script>
+                    <script src="lib/angular-cookies/angular-cookies.js"></script>
                     <script type="text/javascript" src="/auth/green.auth.js">
                                         
                     </script>
