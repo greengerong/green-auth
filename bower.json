@@ -1,6 +1,6 @@
 {
   "name": "green-auth",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "homepage": "https://github.com/greengerong/green-auth",
   "authors": [
     "greengerong <grzx2210@163.com>"
@@ -19,7 +19,7 @@
     "demo",
     "test",
     "tests",
-    "Gruntfile.js",
+    "Gruntfile.js"
   ],
   "dependencies": {
     "angular": ">=1.2.0",
