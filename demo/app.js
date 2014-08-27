@@ -3,7 +3,7 @@
 angular.module("green.auth.demo", ["green.auth"])
 .config(["tokenCacheFactory", "authServiceProvider", function(tokenCacheFactory, authServiceProvider){
    //TODO: you can define your token cache. default is in js object.
-    //authServiceProvider.setTokenCache(tokenCacheFactory.sessionStorage("my-customer-stroage-token-key"));
+    authServiceProvider.setCacheFactory(tokenCacheFactory.sessionStorage("my-customer-stroage-token-key"));
 }])
 .controller("demoController", ["$http", "authService", "$timeout", "$scope", function($http, authService, $timeout, $scope) {
 

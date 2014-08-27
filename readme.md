@@ -10,9 +10,15 @@ Run server: grunt server
 All of this, please make sure you install node and grunt-cli(npm install -g 
 grunt-cli) and run npm intsall on project directory.
 
-note: If you want to keep the token when user refresh the page, you can put the token to cookie, and set token when angular run phase:(Please make sure include angular-cookie in your page.)
+You can download from dist or bower install:
 
-        appModule.run(["authService", "$cookieStore", function(authService, $cookieStore){
-            authService.setToken(JSON.parse($cookieStore.get("token")))
-        }]);
+	bower install green-auth --save
+
+note: If you want to keep the token when user refresh the page, you put one of storage :
+
+        angular.module("green.auth.demo", ["green.auth"]).config(["tokenCacheFactory", "authServiceProvider", function(tokenCacheFactory, authServiceProvider){
+   			//TODO: you can define your token cache. default is in js object.
+    		authServiceProvider.setCacheFactory(tokenCacheFactory.sessionStorage("my-customer-stroage-token-key"));
+		}])
+        
         
