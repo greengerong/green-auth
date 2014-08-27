@@ -16,11 +16,13 @@ You can download from dist or bower install:
 
 note: If you want to keep the token when user refresh the page, you put one of storage :
 
-        angular.module("green.auth.demo", ["green.auth"])
-        .config(["tokenCacheFactory", "authServiceProvider", 
-    		function(tokenCacheFactory, authServiceProvider){
-   			//TODO: you can define your token cache. default is in js object.
-    		authServiceProvider.setCacheFactory(tokenCacheFactory.cookie("my-customer-stroage-token-key"));
-		}]);
+        angular.module("green.auth.demo", ["green.auth", "ngCookies"])
+  		.config(["tokenCacheFactory", "authServiceProvider",
+    		function(tokenCacheFactory, authServiceProvider) {
+		      //TODO: you can define your token cache. default is in js object.
+		      //tokenCacheFactory inlcude : jsObject, localStorage, sessionStorage, cookie
+		      authServiceProvider.setCacheFactory(tokenCacheFactory.cookie("my-customer-stroage-token-key"));
+    		}
+  		]);
         
 
