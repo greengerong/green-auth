@@ -20,7 +20,7 @@ note: If you want to keep the token when user refresh the page, you put one of s
         .config(["tokenCacheFactory", "authServiceProvider", 
     		function(tokenCacheFactory, authServiceProvider){
    			//TODO: you can define your token cache. default is in js object.
-    		authServiceProvider.setCacheFactory(tokenCacheFactory.sessionStorage("my-customer-stroage-token-key"));
+    		authServiceProvider.setCacheFactory(tokenCacheFactory.cookie("my-customer-stroage-token-key"));
 		}]);
         
 
