@@ -137,4 +137,21 @@ angular.module("green.auth", []).factory("authInterceptor", ["$q", "authService"
     function($httpProvider) {
       $httpProvider.interceptors.push('authInterceptor', "responseInterceptor");
     }
-  ])
+  ]).service("requestErrorHandler", ["$rootScope",
+    function($rootScope) {
+      var self = this,
+        handlers = {};
+
+      self.handle = function(status, handler) {
+        var statusArray = angular.isArray(status) ? status : [status];
+        angular.forEach(statusArray, function(value) {
+          handlers[value] = handler;
+        });
+        return self;
+      };
+
+      $rootScope.$on("green-auth-event:response-error", function(event, response) {
+        (handlers[response.status] || angular.noop)(event, response);
+      });
+    }
+  ]);
