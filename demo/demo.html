@@ -2,25 +2,26 @@
 <!--[if lt IE 7]>
     <html class="no-js lt-ie9 lt-ie8 lt-ie7">
     <![endif]-->
-    <!--[if IE 7]>
+<!--[if IE 7]>
         <html class="no-js lt-ie9 lt-ie8">
         <![endif]-->
-        <!--[if IE 8]>
+<!--[if IE 8]>
             <html class="no-js lt-ie9">
             <![endif]-->
-            <!--[if gt IE 8]>
+<!--[if gt IE 8]>
                 <!-->
-                <html class="no-js" id="ng-app" ng-app="green.auth.demo">
-                <!--<![endif]-->
-                <head>
-                    <meta charset="utf-8">
-                    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-                    <title>
-                    </title>
-                    <meta name="description" content="">
-                    <meta name="viewport" content="width=device-width">
-                    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
-                    <!--[if lt IE 9]>
+<html class="no-js" id="ng-app" ng-app="green.auth.demo">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>
+    </title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+    <!--[if lt IE 9]>
                         <script src="scripts/lib/ie/es5-shim/es5-shim.js">
                                                 
                         </script>
@@ -28,9 +29,10 @@
                                                 
                         </script>
                     <![endif]-->
-                </head>
-                <body ng-controller="demoController">
-                    <!--[if lt IE 7]>
+</head>
+
+<body ng-controller="demoController">
+    <!--[if lt IE 7]>
                         <p class="browsehappy">
                             You are using an
                             <strong>
@@ -42,44 +44,43 @@
                             to improve your experience.
                         </p>
                     <![endif]-->
-                    <div class="container">
-                        <div class="alert" ng-class="{'alert-success':isSuccess,'alert-danger':!isSuccess}"ng-show="!!msg">
-                            {{msg}}
-                        </div>
-                        <form class="form-horizontal" role="form">
-                            <div class="form-group">
-                                <label for="token" class="col-sm-2 control-label">
-                                    Token
-                                </label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="token" placeholder="token" ng-model="token"
-                                    />
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-sm-offset-2 col-sm-10">
-                                <button type="button" class="btn btn-default" ng-click="setToken();">
-                                        Set Token
-                                    </button>
+    <div class="container">
+        <server-error-panel></server-error-panel>
+        <form class="form-horizontal" role="form">
+            <div class="form-group">
+                <label for="token" class="col-sm-2 control-label">
+                    Token
+                </label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="token" placeholder="token" ng-model="token" />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="button" class="btn btn-default" ng-click="setToken();">
+                        Set Token
+                    </button>
+                    <button type="button" class="btn btn-default" ng-click="requestSuccess();">
+                        Request Success
+                    </button>
+                    <button type="button" class="btn btn-default" ng-click="requestError();">
+                        Request Error
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/angular-cookies/angular-cookies.js"></script>
+    <script type="text/javascript" src="/auth/green.auth.js">
+    </script>
+    <script src="app.js">
+    </script>
+</body>
+<script type="text/ng-template" id="server-error-panel.html">
+    <div class="alert" ng-class="{'alert-success':isSuccess,'alert-danger':!isSuccess}" ng-show="!!msg">
+        {{msg}}
+    </div>
+</script>
 
-                                    <button type="button" class="btn btn-default" ng-click="requestSuccess();">
-                                        Request Success
-                                    </button>
-                                    <button type="button" class="btn btn-default" ng-click="requestError();">
-                                        Request Error
-                                    </button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                    <script src="lib/angular/angular.js"></script>
-                    <script src="lib/angular-cookies/angular-cookies.js"></script>
-                    <script type="text/javascript" src="/auth/green.auth.js">
-                                        
-                    </script>
-                    <script src="app.js">
-                                        
-                    </script>
-                </body>
-                
-                </html>
+</html>
