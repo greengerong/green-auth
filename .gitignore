@@ -1,5 +1,8 @@
 node_modules
 .DS_Store
 .idea
+typings
+bower_components
+.bower-git
 
 

@@ -1,0 +1,36 @@
+{
+    "version": "v4",
+    "repo": "borisyankov/DefinitelyTyped",
+    "ref": "master",
+    "path": "typings",
+    "bundle": "typings/tsd.d.ts",
+    "installed": {
+        "angularjs/angular.d.ts": {
+            "commit": "38c6ccfde0e67ff10d7408e0ee8b7720b3f21d3b"
+        },
+        "jquery/jquery.d.ts": {
+            "commit": "38c6ccfde0e67ff10d7408e0ee8b7720b3f21d3b"
+        },
+        "angularjs/angular-animate.d.ts": {
+            "commit": "38c6ccfde0e67ff10d7408e0ee8b7720b3f21d3b"
+        },
+        "jasmine/jasmine.d.ts": {
+            "commit": "38c6ccfde0e67ff10d7408e0ee8b7720b3f21d3b"
+        },
+        "angularjs/angular-route.d.ts": {
+            "commit": "38c6ccfde0e67ff10d7408e0ee8b7720b3f21d3b"
+        },
+        "angularjs/angular-sanitize.d.ts": {
+            "commit": "38c6ccfde0e67ff10d7408e0ee8b7720b3f21d3b"
+        },
+        "angularjs/angular-mocks.d.ts": {
+            "commit": "38c6ccfde0e67ff10d7408e0ee8b7720b3f21d3b"
+        },
+        "angular-ui-bootstrap/angular-ui-bootstrap.d.ts": {
+            "commit": "38c6ccfde0e67ff10d7408e0ee8b7720b3f21d3b"
+        },
+        "underscore/underscore.d.ts": {
+            "commit": "38c6ccfde0e67ff10d7408e0ee8b7720b3f21d3b"
+        }
+    }
+}
