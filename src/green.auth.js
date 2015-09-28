@@ -29,7 +29,7 @@ angular.module("green.auth", []).factory("authInterceptor", ["$q", "authService"
     return {
       "responseError": function(rejection) {
         $rootScope.$broadcast("green-auth-event:response-error", rejection)
-        return $q.reject(rejection);;
+        return $q.reject(rejection);
       },
       "response": function(response) {
         $rootScope.$broadcast("green-auth-event:response-success", response)
